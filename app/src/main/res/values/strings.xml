@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Time Tracker</string>
+    <string name="start">Start Reading</string>
+    <string name="stop">Finish Reading</string>
+</resources>
