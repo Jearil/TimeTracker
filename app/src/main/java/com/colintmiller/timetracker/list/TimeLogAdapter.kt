@@ -27,12 +27,15 @@ class TimeLogAdapter : ListAdapter<TimeLog, TimeLogAdapter.TimeLogViewHolder>(Ti
     class TimeLogViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val startTimeText = itemView.findViewById<TextView>(R.id.start_time)
         private val stopTimeText = itemView.findViewById<TextView>(R.id.end_time)
+        private val duration = itemView.findViewById<TextView>(R.id.duration)
 
         fun bind(timeLog: TimeLog) {
             Log.e("colin", "Setting startTime to " + timeLog.startTime?.formattedString())
             Log.e("colin", "Setting endTime to " + timeLog.endTime?.formattedString())
+            Log.e("colin", "Setting duration to " + timeLog.duration())
             startTimeText.text = timeLog.startTime?.formattedString()
             stopTimeText.text = timeLog.endTime?.formattedString()
+            duration.text = timeLog.duration()
         }
     }
 
@@ -42,7 +45,7 @@ class TimeLogAdapter : ListAdapter<TimeLog, TimeLogAdapter.TimeLogViewHolder>(Ti
         }
 
         override fun areContentsTheSame(oldItem: TimeLog, newItem: TimeLog): Boolean {
-            return oldItem.id == newItem.id
+            return oldItem.id == newItem.id && oldItem.endTime == newItem.endTime
         }
     }
 }
