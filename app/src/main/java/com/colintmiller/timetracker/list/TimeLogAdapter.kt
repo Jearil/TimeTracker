@@ -1,5 +1,7 @@
 package com.colintmiller.timetracker.list
 
+import android.util.Log
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
@@ -13,7 +15,8 @@ import com.colintmiller.timetracker.utils.formattedString
 class TimeLogAdapter : ListAdapter<TimeLog, TimeLogAdapter.TimeLogViewHolder>(TimeLogComparator()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TimeLogViewHolder {
-        return TimeLogViewHolder(parent)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.time_item_layout, parent, false)
+        return TimeLogViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: TimeLogViewHolder, position: Int) {
@@ -26,6 +29,8 @@ class TimeLogAdapter : ListAdapter<TimeLog, TimeLogAdapter.TimeLogViewHolder>(Ti
         private val stopTimeText = itemView.findViewById<TextView>(R.id.end_time)
 
         fun bind(timeLog: TimeLog) {
+            Log.e("colin", "Setting startTime to " + timeLog.startTime?.formattedString())
+            Log.e("colin", "Setting endTime to " + timeLog.endTime?.formattedString())
             startTimeText.text = timeLog.startTime?.formattedString()
             stopTimeText.text = timeLog.endTime?.formattedString()
         }
@@ -33,11 +38,11 @@ class TimeLogAdapter : ListAdapter<TimeLog, TimeLogAdapter.TimeLogViewHolder>(Ti
 
     class TimeLogComparator : DiffUtil.ItemCallback<TimeLog>() {
         override fun areItemsTheSame(oldItem: TimeLog, newItem: TimeLog): Boolean {
-            return oldItem === newItem
+            return oldItem.id == newItem.id
         }
 
         override fun areContentsTheSame(oldItem: TimeLog, newItem: TimeLog): Boolean {
-            return oldItem == newItem
+            return oldItem.id == newItem.id
         }
     }
 }

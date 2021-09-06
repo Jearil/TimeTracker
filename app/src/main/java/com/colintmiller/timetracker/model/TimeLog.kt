@@ -8,4 +8,4 @@ import java.util.*
 data class TimeLog(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
     val startTime: Date? = Date(),
-    val endTime: Date? = null)
+    var endTime: Date? = null)

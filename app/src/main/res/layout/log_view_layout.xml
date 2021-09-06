@@ -11,12 +11,16 @@
         android:id="@+id/recyclerView"
         android:layout_width="409dp"
         android:layout_height="729dp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        android:paddingTop="15dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:paddingBottom="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/toggle_reading"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/toggle_reading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/start"

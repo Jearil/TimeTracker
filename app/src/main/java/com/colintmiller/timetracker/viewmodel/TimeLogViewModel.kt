@@ -6,7 +6,8 @@ import com.colintmiller.timetracker.model.TimeLog
 import kotlinx.coroutines.launch
 import java.lang.IllegalArgumentException
 
-class TimeLogViewModel(private val dao: TimeDao): ViewModel() {
+class TimeLogViewModel(
+    private val dao: TimeDao): ViewModel() {
 
     val allLogs : LiveData<List<TimeLog>> = dao.getAll().asLiveData()
 

@@ -14,7 +14,7 @@ interface TimeDao {
     fun getAll(): Flow<List<TimeLog>>
 
     @Query("Select * from TimeLog where endTime is null")
-    fun getUnending(): Flow<List<TimeLog>>
+    fun getUnending(): List<TimeLog>
 
     @Insert
     fun insertTime(log: TimeLog)
