@@ -17,8 +17,10 @@ data class TimeLog(
         endTime?.let {
             val duration = it.time - startTime.time
             val hours = TimeUnit.MILLISECONDS.toHours(duration)
-            val minutes = TimeUnit.MILLISECONDS.toMinutes(duration)
-            val seconds = TimeUnit.MILLISECONDS.toSeconds(duration)
+            val hoursInMs = TimeUnit.HOURS.toMillis(hours)
+            val minutes = TimeUnit.MILLISECONDS.toMinutes(duration - hoursInMs)
+            val minutesInMs = TimeUnit.MINUTES.toMillis(minutes)
+            val seconds = TimeUnit.MILLISECONDS.toSeconds(duration - hoursInMs - minutesInMs)
 
             return if (hours > 0) {
                 hours.toString() + "h " + minutes.toString() + "m " + seconds.toString() + "s"
