@@ -1,0 +1,15 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+  <group android:scaleX="3.618"
+      android:scaleY="3.618"
+      android:translateX="17.82"
+      android:translateY="17.82">
+      <path android:fillColor="#4d4d4d" android:fillType="evenOdd"
+          android:pathData="m3.264,4.2256v2.8878h13.472v-2.8878zM3.264,8.0756v1.9244h1.9244v-1.9244zM6.1506,8.0756v1.9244h1.9244v-1.9244zM9.0372,8.0756v1.9244h1.9244v-1.9244zM11.925,8.0756v1.9244h1.9244v-1.9244zM14.8116,8.0756v1.9244h1.9244v-1.9244zM3.264,10.9622v1.9244h1.9244v-1.9244zM6.1506,10.9622v1.9244h1.9244v-1.9244zM9.0372,10.9622v1.9244h1.9244v-1.9244zM11.925,10.9622v1.9244h1.9244v-1.9244zM14.8116,10.9622v1.9244h1.9244v-1.9244zM3.264,13.85v1.9244h1.9244v-1.9244zM6.1506,13.85v1.9244h1.9244v-1.9244zM9.0372,13.85v1.9244h1.9244v-1.9244zM11.925,13.85v1.9244h1.9244v-1.9244zM14.8116,13.85v1.9244h1.9244v-1.9244z"
+          android:strokeColor="#00000000" android:strokeLineCap="butt"
+          android:strokeLineJoin="miter" android:strokeWidth="0.25461987"/>
+  </group>
+</vector>
